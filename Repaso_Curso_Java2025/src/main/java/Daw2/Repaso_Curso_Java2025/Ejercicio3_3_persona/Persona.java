@@ -9,14 +9,31 @@ public class Persona {
     private double peso;
     private double altura;
     
-	public Persona(String nombre, int edad, String dni, String sexo, double peso, double altura) {
-		super();
+    private static final int BAJO_PESO = -1;
+    private static final int PESO_NORMAL = 0;
+    private static final int SOBREPESO = 1;
+    
+	public Persona(String nombre, int edad, String sexo, double peso, double altura) {
 		this.nombre = nombre;
 		this.edad = edad;
-		this.dni = dni;
 		this.sexo = sexo;
 		this.peso = peso;
 		this.altura = altura;
+	}
+	
+	public Persona(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public Persona(String nombre ,int edad, String sexo) {
+		this.nombre = nombre;
+		this.edad = edad;
+		this.sexo = sexo;
+	}
+	public Persona(double peso, double altura) {
+		this.peso = peso;
+		this.altura = altura;
+		
 	}
 
 	public String getNombre() {
@@ -72,7 +89,30 @@ public class Persona {
 		return "Persona [nombre=" + nombre + ", edad=" + edad + ", dni=" + dni + ", sexo=" + sexo + ", peso=" + peso
 				+ ", altura=" + altura + "]";
 	}
+	// Método para calcular el IMC
+    public int calcularIMC() {
+    	
+        double imc = peso / (altura * altura);
+
+        if (imc < 20) {
+            return BAJO_PESO;
+        } else if (imc >= 20 && imc <= 25) {
+            return PESO_NORMAL;
+        } else {
+            return SOBREPESO;
+        }
+    }
+    // metodo esMayorEdad
     
+    public boolean esMayorEdad(int edad){
+    	String Mayor = "Mayor";
+    	String Menor = "Menor";
+
+    	if(edad >= 18) {
+    		return true;
+    	}else {
+			return false;
+		}
+    }
 	
-    
 }

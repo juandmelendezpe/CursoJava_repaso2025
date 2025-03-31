@@ -3,6 +3,10 @@ package Daw2.Repaso_Curso_Java2025.Ejercicio3_3_persona;
 import java.util.Scanner;
 
 public class Init {
+	 	private static final int BAJO_PESO = -1;
+	    private static final int PESO_NORMAL = 0;
+	    private static final int SOBREPESO = 1;
+	    
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -11,6 +15,7 @@ public class Init {
 		 
 		 int opt = 0;
 		 int contPersona = 0;
+		 
 		 
 		 do {
 				 System.out.println("-------------Menu---------------");
@@ -45,11 +50,20 @@ public class Init {
 					 System.out.println("introduce la altura");
 					 double altura = sc.nextDouble();
 					 
+					 Persona imc = new Persona(peso,altura);
+				     int resultadoIMC = imc.calcularIMC();
+				     System.out.println("Resultado IMC: " + resultadoIMC);
+				     
+				     
+				        
+					 
+					 
 					 System.out.println("Datos Obtenidos-------");
 					 System.out.println("Nombre:"+ nombre +"\n");
 					 System.out.println("edad:"+ edad +"\n");
 					 System.out.println("peso:"+ peso +"\n");
 					 System.out.println("talla:"+ altura +"\n");
+					 System.out.println("su imc = "+ resultadoIMC);
 
 
 					 break;
