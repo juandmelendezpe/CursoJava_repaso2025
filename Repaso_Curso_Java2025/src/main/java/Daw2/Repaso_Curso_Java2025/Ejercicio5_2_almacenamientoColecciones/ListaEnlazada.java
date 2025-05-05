@@ -129,16 +129,8 @@ public class ListaEnlazada implements Lista {
 	@Override
 	public boolean containsInfo(int info) {
 		boolean resultado = false;
-		if (!isEmpty()) {
-			Nodo aux = primero;
-			while (aux != null) {
-				if (aux.getInfo().equals(info)) {
-					resultado = true;
-					break;
-				}
-				aux = aux.getSig();
-			}
-		}
+		
+	
 		return resultado;
 	}
 

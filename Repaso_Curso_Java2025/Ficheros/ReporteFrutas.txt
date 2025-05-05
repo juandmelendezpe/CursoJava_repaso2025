@@ -1,0 +1,8 @@
+**********Reportes de frutas**********
+Lista de Frutas
+nombre de la Fruta: fresa -> Precio : 2.0
+nombre de la Fruta: mango -> Precio : 5.0
+nombre de la Fruta: fresa -> Precio : 8.0
+nombre de la Fruta: sandia -> Precio : 9.0
+nombre de la Fruta: melon -> Precio : 2.0
+fin del fichero....
