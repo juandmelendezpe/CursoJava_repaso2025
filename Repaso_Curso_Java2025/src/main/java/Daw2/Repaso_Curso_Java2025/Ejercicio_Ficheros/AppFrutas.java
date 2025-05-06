@@ -1,6 +1,5 @@
 package Daw2.Repaso_Curso_Java2025.Ejercicio_Ficheros;
 
-import java.awt.List;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -27,12 +26,12 @@ public class AppFrutas {
 	
 		ArrayList<Frutas> lista = new ArrayList<>();
 		
-		/* lista.add(new Frutas("fresa",10,2.0));
+		 lista.add(new Frutas("fresa",10,2.0));
 		lista.add(new Frutas("mango",20,5.0));
 		lista.add(new Frutas("fresa",8,8.0));
 		lista.add(new Frutas("sandia",9,9.0));
 		lista.add(new Frutas("melon",3,2.0));
-		*/
+	
 		
 		guardarLista(lista);
 		
