@@ -26,7 +26,7 @@ public class AppFrutas {
 	
 		ArrayList<Frutas> lista = new ArrayList<>();
 		
-		 lista.add(new Frutas("fresa",10,2.0));
+		lista.add(new Frutas("fresa",10,2.0));
 		lista.add(new Frutas("mango",20,5.0));
 		lista.add(new Frutas("fresa",8,8.0));
 		lista.add(new Frutas("sandia",9,9.0));
@@ -41,16 +41,11 @@ public class AppFrutas {
 	/*private static List<Frutas> leerFicheros(String nombresFichros){
 		List<Frutas> frutas = new ArrayList<>();
 		
-		
-		
 	}
 	*/
-	
 	private static void generarFrutas() {
 		
 		//int numFile = r.nextInt(4)+2;
-		
-		
 		
 	}
 	private static void guardarLista(ArrayList<Frutas>list) {
@@ -59,10 +54,7 @@ public class AppFrutas {
 				
 		String linea1 = "**********Reportes de frutas**********" + "\n";
 		
-		
-			
-		
-		Path file = Paths.get("ficheros/ReporteFrutas.txt");
+		Path file = Paths.get("ficheros/ReporteFrutas2.txt");
 		
 		try(BufferedWriter bw = Files.newBufferedWriter(file, StandardCharsets.UTF_8)) {
 			System.out.println("inicio de la escritura del fichero externo");

@@ -33,17 +33,58 @@ public class Init {
 		
 		}
 		private static void fusionarFicherosFrutas(String[] nombreFicherosLeer) {
+		    // Maps to store aggregated data
+		    Map<String, Integer> mapaCantidades = new HashMap<>();
+		    Map<String, Double> mapaPrecioTotal = new HashMap<>();
+
+		    // Read and process each file
+		    for (String nombreFichero : nombreFicherosLeer) {
+		        List<Frutas> frutas = leerFrutasFichero(nombreFichero);
+		        for (Frutas fruta : frutas) {
+		            String nombre = fruta.getNombre();
+		            int cantidad = fruta.getCantidad();
+		            double precio = fruta.getPrecio();
+
+		            // Update quantity
+		            mapaCantidades.put(nombre, mapaCantidades.getOrDefault(nombre, 0) + cantidad);
+
+		            // Update total price
+		            mapaPrecioTotal.put(nombre, mapaPrecioTotal.getOrDefault(nombre, 0.0) + (precio * cantidad));
+		        }
+		    }
+
+		    // Write the aggregated data to the output file
+		    String nombreFicheroSalida = "frutasFusion3.txt";
+		    Path pathSalida = Paths.get(CARPETA, nombreFicheroSalida);
+		    try (BufferedWriter bw = Files.newBufferedWriter(pathSalida, StandardCharsets.UTF_8,
+		            StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
+		        System.out.println("Escribiendo el fichero de fusion " + nombreFicheroSalida);
+		        bw.write("----------REPORTE---------\n");
+		        bw.write("Nombre;Cantidad;Precio Medio\n");
+
+		        for (String nombre : mapaCantidades.keySet()) {
+		            int cantidad = mapaCantidades.get(nombre);
+		            double precioMedio = mapaPrecioTotal.get(nombre) / cantidad;
+		            bw.write(nombre + DELIMITER + cantidad + DELIMITER + String.format("%.2f", precioMedio) + "\n"); // Formato a 2 decimales
+		        }
+
+		        System.out.println("Fin de la escritura de :" + nombreFicheroSalida);
+		    } catch (IOException e) {
+		        e.printStackTrace();
+		    }
+		}
+
+		private static void fusionarFicherosFrutas2(String[] nombreFicherosLeer) {
 		//Primer paso: lectura de ficheros, para los calculos
+		Map<Integer, String> nombres = new HashMap<>();
 		Map<String, Integer> mapaCantidades = new HashMap<>();
 		Map<String, Double> mapaPrecioMedio = new HashMap<>();
 		
 		for (String nombreFichero : nombreFicherosLeer) {
 		List<Frutas> frutas = leerFrutasFichero(nombreFichero);
+		//frutas = nombres.containsValue();
 		for (Frutas fruta : frutas) {
-			
-			String NombreFruta = fruta.getNombre();	
-			int Cant = fruta.getCantidad();
-			
+			//fruta = frutas.get();
 		}
 		
 		}
@@ -52,21 +93,21 @@ public class Init {
 		
 		Path pathSalida = Paths.get(CARPETA , "frutasFusion.txt");
 		
-		try (BufferedWriter bw = Files.newBufferedWriter(pathSalida, StandardCharsets.UTF_8, 
+		/*try (BufferedWriter bw = Files.newBufferedWriter(pathSalida, StandardCharsets.UTF_8, 
 				StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
 		System.out.println("Escribiendo el fichero de fusion frutasFusion.txt" );
 		bw.write("----------REPORTE---------");
-		/*for(Frutas f : frutas.values()) {
+		/for(Frutas f : nombres) {
 			bw.write(f.getCantidad());
 			
 			//bw.write(NombreFruta + DELIMITER + cantidad + DELIMITER + precio + "\n");
 		}
-		*/
+		
 		System.out.println("Fin de la escritura de frutasFusion.txt");
 		} catch (IOException e) {
 		e.printStackTrace();
 		}
-		
+		*/
 		}
 		private static List<Frutas> leerFrutasFichero(String nombreFichero) {
 		
@@ -87,6 +128,7 @@ public class Init {
 			e.printStackTrace();
 		}
 		    return frutas;
+		 
 		}
 		
 		private static void generarFicherosFrutas() {

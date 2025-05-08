@@ -4,4 +4,4 @@ Pera;4;5,69
 Melón;16;5,27
 Naranja;17;7,71
 Sandía;19;9,61
-Manzana;19;1,31
+Manzana;20;1,31
