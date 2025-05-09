@@ -27,6 +27,11 @@ public class T1_genericos {
 		elementoAleatorio(arrayCadenas);
 		System.out.println("-------------------------------------------------");
 		elementoAleatorio(arrayEnteros);
+		System.out.println("-------------------------------------------------");
+		for (int i = 0; i < arrayCadenas.length; i++) {
+			System.out.println("Elemento " + i + ": " + arrayCadenas[i]);
+		}
+				
 		
 
 	}

@@ -27,6 +27,8 @@ public class T2_arraysList {
 		listaFrutas.add("Melón");
 		listaFrutas.add("Kiwi");
 		listaFrutas.remove("Plátano");
+		listaFrutas.get(0); // Acceder al primer elemento
+		listaFrutas.set(0, "Mango"); // Cambiar el primer elemento
 		mostrarFrutas(listaFrutas);
 		
 		System.out.println("-Mostra con foreach ----------------------------------------");
@@ -52,6 +54,13 @@ public class T2_arraysList {
 				System.out.println(fruta);
 			}
 			
+		}
+		public static void buscarFruta(ArrayList<String> listaFrutas, String fruta) {
+			if (listaFrutas.contains(fruta)) {
+				System.out.println("La fruta " + fruta + " está en la lista.");
+			} else {
+				System.out.println("La fruta " + fruta + " no está en la lista.");
+			}
 		}
 		
 }

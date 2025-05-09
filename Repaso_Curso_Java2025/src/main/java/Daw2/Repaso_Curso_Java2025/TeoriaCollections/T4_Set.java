@@ -121,6 +121,16 @@ public class T4_Set {
 		frutas.add("Plátano");
 		frutas.add("Naranja");
 		frutas.add("Uva");
+		frutas.add("Naranja");
+
+		
+		String fruta = "Naranja";
+		Set<Integer> numeros = new LinkedHashSet<>();
+		numeros.add(1);
+		numeros.add(2);
+		numeros.add(3);
+		
+		System.out.println("Números en el LinkedHashSet: " + numeros);
 		
 		
 		System.out.println("Frutas en el LinkedHashSet: " + frutas);
@@ -142,6 +152,8 @@ public class T4_Set {
 		frutas.add("Manzana");
 		frutas.add("Plátano");
 		frutas.add("Naranja");
+		frutas.add("Anona");
+		frutas.add("Banana");
 		
 		System.out.println("Frutas en el TreeSet: " + frutas);
 		
