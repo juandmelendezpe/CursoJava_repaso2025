@@ -1,4 +1,4 @@
-package Daw2.Repaso_Curso_Java2025.Ejercicio_Ficheros;
+package Daw2.Repaso_Curso_Java2025.TeoriaCollections;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -49,7 +49,13 @@ public class Teoria_1_Map {
 		mapaFrutas.remove(8);
 		System.out.println("Estos son los ids del mapa -> "+mapaFrutas.keySet());
 		
-		System.out.println("Estos son los valore del mapa -> "+mapaFrutas.containsValue("Sandia"));
+		String valor2 = "Sandia";
+		
+		System.out.println("Se verifica si existe el valor en el mapa ->:  "+ valor2 +"->"+ mapaFrutas.containsValue(valor2));
+		System.out.println("--------------------------------");
+		for (int i = 0; i < 10; i++) {
+			mapaFrutas.put(i, "fruta"+i);
+		}
 		
 		/* 
 		 * La interfaz Set representa una coleccion de elementos unicos
@@ -59,8 +65,43 @@ public class Teoria_1_Map {
 			String valor = mapaFrutas.get(key);
 			System.out.println("ID: " + key + ", Valor: " + valor);
 		}
-		
-
+		// mostrar el mmapa con foreach
+		System.out.println("Mostrando el mapa con foreach");
+		for (Map.Entry<Integer, String> entry : mapaFrutas.entrySet()) {
+			Integer key = entry.getKey();
+			String value = entry.getValue();
+			System.out.println("ID: " + key + ", Valor: " + value);
+		}
+		// mostrar el mapa con lambda
+		System.out.println("Mostrando el mapa con lambda");
+		mapaFrutas.forEach((key, value) -> {
+			System.out.println("ID: " + key + ", Valor: " + value);
+		});
+		// mostrar el mapa con stream
+		System.out.println("Mostrando el mapa con stream");
+		mapaFrutas.entrySet().stream()
+			.forEach(entry -> {
+				Integer key = entry.getKey();
+				String value = entry.getValue();
+				System.out.println("ID: " + key + ", Valor: " + value);
+			});
+		// mostrar el mapa con stream y filter
+		System.out.println("Mostrando el mapa con stream y filter");
+		mapaFrutas.entrySet().stream()
+			.filter(entry -> entry.getKey() > 2)
+			.forEach(entry -> {
+				Integer key = entry.getKey();
+				String value = entry.getValue();
+				System.out.println("ID: " + key + ", Valor: " + value);
+			});
+		// mostrar el mapa con stream y filter y map
+		System.out.println("Mostrando el mapa con stream y filter y map");
+		mapaFrutas.entrySet().stream()
+			.filter(entry -> entry.getKey() > 2)
+			.map(entry -> entry.getValue())
+			.forEach(value -> {
+				System.out.println("Valor: " + value);
+			});
 		
 	}
 

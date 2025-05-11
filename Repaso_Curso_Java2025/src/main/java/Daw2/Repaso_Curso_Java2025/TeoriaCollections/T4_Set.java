@@ -8,7 +8,6 @@ import java.util.TreeSet;
 public class T4_Set {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		/*
 		 * Un Set es una coleccion de elementos unicos,
 		 *  lo que significa que no puede contener elementos duplicados.
@@ -124,7 +123,6 @@ public class T4_Set {
 		frutas.add("Naranja");
 
 		
-		String fruta = "Naranja";
 		Set<Integer> numeros = new LinkedHashSet<>();
 		numeros.add(1);
 		numeros.add(2);
@@ -134,8 +132,9 @@ public class T4_Set {
 		
 		
 		System.out.println("Frutas en el LinkedHashSet: " + frutas);
+		String fruta = "Plátano";
 		
-		frutas.remove("Plátano");
+		frutas.remove(fruta);
 		
 		System.out.println("Frutas después de eliminar 'Plátano': " + frutas);
 		

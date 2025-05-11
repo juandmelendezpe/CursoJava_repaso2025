@@ -42,9 +42,9 @@ public class T5_SetComparator implements Comparator<Persona> {
 		// Comparar personas por nombre
 		int resultadoNombre = comparadorPorNombre.compare(persona1, persona2);
 		if (resultadoNombre < 0) {
-			System.out.println(persona1.getNombre() + " es menor que " + persona2.getNombre());
+			System.out.println(persona1.getNombre() + " es menor que -> utilizando compare : " + persona2.getNombre());
 		} else if (resultadoNombre > 0) {
-			System.out.println(persona1.getNombre() + " es mayor que " + persona2.getNombre());
+			System.out.println(persona1.getNombre() + " es mayor que -> utilizando compare : " + persona2.getNombre());
 		} else {
 			System.out.println(persona1.getNombre() + " es igual a " + persona2.getNombre());
 		}
@@ -89,6 +89,11 @@ public class T5_SetComparator implements Comparator<Persona> {
 	public int compare(Persona o1, Persona o2) {
 		// TODO Auto-generated method stub
 		return o1.getNombre().compareTo(o2.getNombre());
+	}
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return this == obj;
 	}
 	
 
