@@ -33,11 +33,11 @@ public class Init {
 		
 		}
 		private static void fusionarFicherosFrutas(String[] nombreFicherosLeer) {
-		    // Maps to store aggregated data
+		   
 		    Map<String, Integer> mapaCantidades = new HashMap<>();
 		    Map<String, Double> mapaPrecioTotal = new HashMap<>();
 
-		    // Read and process each file
+		    
 		    for (String nombreFichero : nombreFicherosLeer) {
 		        List<Frutas> frutas = leerFrutasFichero(nombreFichero);
 		        for (Frutas fruta : frutas) {
@@ -45,15 +45,15 @@ public class Init {
 		            int cantidad = fruta.getCantidad();
 		            double precio = fruta.getPrecio();
 
-		            // Update quantity
+		            // actualiza cantidad
 		            mapaCantidades.put(nombre, mapaCantidades.getOrDefault(nombre, 0) + cantidad);
 
-		            // Update total price
+		            // actualizae l precio total
 		            mapaPrecioTotal.put(nombre, mapaPrecioTotal.getOrDefault(nombre, 0.0) + (precio * cantidad));
 		        }
 		    }
 
-		    // Write the aggregated data to the output file
+		    
 		    String nombreFicheroSalida = "frutasFusion3.txt";
 		    Path pathSalida = Paths.get(CARPETA, nombreFicheroSalida);
 		    try (BufferedWriter bw = Files.newBufferedWriter(pathSalida, StandardCharsets.UTF_8,
@@ -80,11 +80,14 @@ public class Init {
 		Map<String, Integer> mapaCantidades = new HashMap<>();
 		Map<String, Double> mapaPrecioMedio = new HashMap<>();
 		
+		
 		for (String nombreFichero : nombreFicherosLeer) {
 		List<Frutas> frutas = leerFrutasFichero(nombreFichero);
 		//frutas = nombres.containsValue();
 		for (Frutas fruta : frutas) {
-			//fruta = frutas.get();
+			/**
+			 * if(frutas
+			 */
 		}
 		
 		}
@@ -155,10 +158,6 @@ public class Init {
 		e.printStackTrace();
 		
 			}
-		
 		}
-		
-	
-
 			}
 		}
