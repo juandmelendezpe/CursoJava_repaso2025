@@ -18,7 +18,7 @@ public class Init {
 
 	private final static String CARPETA = "Ficheros";
 	private final static String DELIMITER = ";";
-	private final static int CANT_FICHEROS = 2;
+	private final static int CANT_ = 2;
 	private final static String[] FRUTAS = { "Manzana", "Plátano", "Naranja", "Uva", "Pera", "Sandía", "Melón" };
 
 	public static void main(String[] args) {
@@ -172,7 +172,7 @@ public class Init {
 
 		Random r = new Random();
 		//int numFicheros = r.nextInt(4) + 2; // de 2 a 5 ficheros
-		for (int f = 0; f < CANT_FICHEROS; f++) {
+		for (int f = 0; f < CANT_; f++) {
 			String nombreFichero = "lista_" + f + ".txt";
 			System.out.println("Escribiendo el fichero " + nombreFichero);
 			Path path = Paths.get(CARPETA, nombreFichero);
@@ -180,7 +180,7 @@ public class Init {
 					StandardOpenOption.TRUNCATE_EXISTING);) {
 				//int numLineas = r.nextInt(2) + 3; // de 3 a 5 lineas
 
-				for (int i = 0; i < CANT_FICHEROS; i++) {
+				for (int i = 0; i < CANT_; i++) {
 					String nombre = FRUTAS[r.nextInt(FRUTAS.length)];
 					int cantidad = r.nextInt(20) + 1; // de 1 a 20
 					double precio = r.nextDouble(10) + 1; // de 1 a 10
