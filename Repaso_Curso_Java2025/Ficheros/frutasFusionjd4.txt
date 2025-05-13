@@ -1,0 +1,5 @@
+----------REPORTE---------
+Nombre;Cantidad;Precio Medio
+Uva;19;0,95
+Pera;20;9,67
+Naranja;5;7,02
